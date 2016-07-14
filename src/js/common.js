@@ -102,6 +102,11 @@ $(function () {
         'speedFade': 300
     });
 
+    $('#s-tabs').tabs({
+        'active_number' : 0, // First element index 0
+        'speedFade': 300
+    });
+
 
     // Tabs work
     $('#work-grid').mixItUp({

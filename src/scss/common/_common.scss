@@ -78,11 +78,11 @@ section {
     }
     &:before {
       bottom: 5px;
-      left: calc(50% - 60px);
+      left: calc(50% - 45px);
     }
     &:after {
       bottom: 0;
-      left: calc(50% - 40px);
+      left: calc(50% - 25px);
     }
   }
 }
@@ -139,7 +139,7 @@ section {
       .tab-pane {
         font-size: 14px;
         min-height: 270px;
-        &#biography, &#history {
+        &:nth-child(1), &:nth-child(2) {
           p:first-child {
             margin-top: 0;
           }
@@ -147,7 +147,7 @@ section {
             margin-bottom: 0;
           }
         }
-        &#history {
+        &:nth-child(1) {
           ul {
             margin: 30px 0 0 0;
             padding: 0;
@@ -162,7 +162,7 @@ section {
             }
           }
         }
-        &#skills {
+        &:nth-child(3) {
           .a-graph {
             list-style-type: none;
             margin: 0;
@@ -306,14 +306,55 @@ section {
 
 .work-popap-container {
   position: relative;
-  background-color: #ffffff;
   max-width: 800px;
   margin: auto;
   h2, p {
     display: inline-block;
     padding: 0 20px;
   }
+}
 
+.services {
+  #s-tabs {
+    .nav-tabs
+    {
+      display: block;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      margin: 70px 0 0;
+      font-size: 0;
+      li {
+        position: relative;
+        list-style-type: none;
+        float: left;
+        width: unquote((100 / 6)+'%');
+        font-size: 14px;
+        padding: 18px 30px;
+        font-weight: 500;
+        cursor: pointer;
+        &+li {
+          border-left: none;
+        }
+        &.active:before {
+          content: '';
+          position: absolute;
+          border-right: 10px solid transparent;
+          border-left: 10px solid transparent;
+          bottom: -10px;
+          left: calc(50% - 10px);
+        }
+      }
+    }
+    .tabs-content {
+      margin-top: 20px;
+      img {
+        float: left;
+        margin-right: 15px;
+        width: unquote((100 / 6)+'%');
+      }
+    }
+  }
 }
 
 @import "media";

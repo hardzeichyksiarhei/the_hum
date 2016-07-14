@@ -146,14 +146,14 @@ section {
     .tabs-content {
       .tab-pane {
         color: #bebebe;
-        &#history {
+        &:nth-child(1) {
           ul {
             i.fa {
               color: $main-color;
             }
           }
         }
-        &#skills {
+        &:nth-child(3) {
           .a-graph {
             li {
               > span {
@@ -230,6 +230,32 @@ section {
     }
   }
 }
+
+.work-popap-container {
+  background-color: #ffffff;
+}
+
+.services {
+  #s-tabs {
+    li {
+      background-color: #f8fcfe;
+      border: 1px solid #e0e0e0;
+      color: #717171;
+      &:hover {
+        color: $main-color;
+      }
+      &.active {
+        color: #fff;
+        background-color: $main-color;
+        border: 1px solid $main-color;
+        &:before {
+          border-top: 10px solid $main-color;
+        }
+      }
+    }
+  }
+}
+
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px){
