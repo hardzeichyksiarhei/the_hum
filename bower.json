@@ -1,0 +1,29 @@
+{
+  "name": "the_hum",
+  "description": "design site",
+  "main": "index.js",
+  "authors": [
+    "hardz"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.*",
+    "owl.carousel": "^2.1.6",
+    "components-font-awesome": "^4.6.3",
+    "bourbon": "^4.2.7",
+    "superslides": "^0.6.2",
+    "animate.css": "^3.5.2",
+    "mixitup": "patrickkunka/mixitup#^2.1.11",
+    "waypoints": "2.*",
+    "magnific-popup": "^1.1.0"
+  }
+}

@@ -1,0 +1,319 @@
+@import "var";
+@import "../../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+*::-webkit-input-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*:-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*::-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*:-ms-input-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+  color: #666;
+}
+
+;
+body input:required:valid,
+body textarea:required:valid {
+  color: #666;
+}
+
+// Custom Style Here
+
+.options {
+  padding: 0;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    .option {
+      display: inline-block;
+      width: unquote((100 / $col-options-lg)+'%');
+      text-align: center;
+      padding: 80px 0;
+      span {
+        font-size: 100px;
+      }
+      p {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-top: 45px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+section {
+  padding: $section-padding 0;
+  h1 {
+    position: relative;
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 30px;
+    margin: 0;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      width: 80px;
+      height: 1px;
+    }
+    &:before {
+      bottom: 5px;
+      left: calc(50% - 60px);
+    }
+    &:after {
+      bottom: 0;
+      left: calc(50% - 40px);
+    }
+  }
+}
+
+.features {
+  .f-container {
+    margin-top: 70px;
+    .f-caption {
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        .fa {
+          vertical-align: middle;
+          margin-right: 10px;
+        }
+      }
+    }
+    .f-content {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.about-company {
+  position: relative;
+  h1 {
+    display: inline-block;
+  }
+  .devices {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+  }
+  #a-tabs {
+    .nav-tabs {
+      list-style-type: none;
+      margin: 65px 0 0 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        text-transform: uppercase;
+        line-height: 2.5;
+        cursor: pointer;
+        &+li{
+          margin-left: 15px;
+        }
+      }
+    }
+    .tabs-content {
+      margin-top: 60px;
+      .tab-pane {
+        font-size: 14px;
+        min-height: 270px;
+        &#biography, &#history {
+          p:first-child {
+            margin-top: 0;
+          }
+          p:last-child {
+            margin-bottom: 0;
+          }
+        }
+        &#history {
+          ul {
+            margin: 30px 0 0 0;
+            padding: 0;
+            i {
+              vertical-align: middle;
+            }
+            li {
+              list-style-type: none;
+              &+li {
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+        &#skills {
+          .a-graph {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li {
+              overflow: hidden;
+              &+li {
+                margin-top: 15px;
+              }
+              &:nth-child(1) .bg {
+                width: 70%;
+              }
+              &:nth-child(2) .bg {
+                width: 80%;
+              }
+              &:nth-child(3) .bg {
+                width: 65%;
+              }
+              &:nth-child(4) .bg {
+                width: 90%;
+              }
+              &:nth-child(5) .bg {
+                width: 80%;
+              }
+              > span {
+                display: block;
+                padding: 20px;
+                position: relative;
+                .bg {
+                  position: absolute;
+                  top: -1px;
+                  bottom: -1px;
+                  left: -1px;
+                  width: 80%;
+                }
+                .text {
+                  position: absolute;
+                  top: 10px;
+                  left: 10px;
+                  bottom: 0;
+                  text-transform: uppercase;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.amazing-work {
+  .w-nav-tabs {
+    padding: 0;
+    text-align: center;
+    margin: 70px 0;
+    font-size: 0;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      font-size: 14px;
+      padding: 18px 30px;
+      font-weight: 500;
+      cursor: pointer;
+      &+li {
+        border-left: none;
+      }
+      &.active {
+        position: relative;
+        &:before {
+          position: absolute;
+          content: '';
+          left: -1px;
+          top: -3px;
+          width: calc(100% + 2px);
+          height: 3px;
+        }
+      }
+    }
+  }
+  #work-grid .mix{
+    display: none;
+  }
+  .work-item {
+    position: relative;
+    padding: 0;
+    .work-item-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+      text-align: center;
+
+      @include transition(.2s opacity linear);
+      &:hover {
+        opacity: 1;
+      }
+      .work-icon {
+        padding-bottom: 25px;
+        .icon-circle {
+          display: inline-block;
+          padding: 12px 13px;
+          border-radius: 50%;
+          outline: none;
+          text-decoration: none;
+          &:last-child {
+            margin-left: 5px;
+          }
+        }
+      }
+      h3.work-caption {
+        font-size: 16px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .work-description {
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .btn-container {
+    text-align: center;
+    a.btn {
+      border-top: none;
+      text-align: center;
+      padding: 15px 20px;
+      span {
+        vertical-align: middle;
+      }
+      .fa {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.work-popap-container {
+  position: relative;
+  background-color: #ffffff;
+  max-width: 800px;
+  margin: auto;
+  h2, p {
+    display: inline-block;
+    padding: 0 20px;
+  }
+
+}
+
+@import "media";

@@ -1,0 +1,41 @@
+@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Thin", 200, $file-formats: eot ttf woff woff2);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Light", 300, $file-formats: eot ttf woff woff2);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Regular", 400, $file-formats: eot ttf woff woff2);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Medium", 500, $file-formats: eot ttf woff woff2);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Bold", 700, $file-formats: eot ttf woff woff2);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Black", 900, $file-formats: eot ttf woff woff2);
+
+@include font-face(icomoon, "../fonts/IcoMoon/icomoon", $file-formats: eot ttf woff svg);
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-option-1:before {
+  content: "\e900";
+}
+.icon-option-2:before {
+  content: "\e901";
+}
+.icon-option-3:before {
+  content: "\e902";
+}
+.icon-option-4:before {
+  content: "\e903";
+}
+.icon-logo:before {
+  content: "\e904";
+}

@@ -1,0 +1,271 @@
+@import "../../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../common/var";
+
+// Default Color Variables
+
+$main-color: #18cfab;
+
+
+// Default Color Theme
+
+.main-bg-color {
+  background-color: $main-color !important;
+}
+
+.main-color {
+  color: $main-color !important;
+}
+
+a.btn {
+  background-color: $main-color;
+  color: #ffffff;
+  border-top: 5px solid #FFFFFF;
+  &.btn-main-2 {
+    background-color: #00cbf6;
+    &:hover {
+      background-color: darken(#00cbf6, 10);
+    }
+  }
+  &:hover {
+    background-color: darken($main-color, 10);
+  }
+}
+
+.main-header {
+  .main-nav {
+    .nav-wrapper {
+      .logo {
+        a {
+          color: #ffffff;
+          i.icon-logo {
+            color: $main-color;
+          }
+        }
+      }
+      .menu {
+        li {
+          &.active a, &:hover a {
+            color: $main-color;
+          }
+          &.active:before {
+            background-color: $main-color;
+          }
+          a {
+            color: #b8b8b8;
+          }
+        }
+      }
+    }
+  }
+
+  #slides {
+    .slide-caption {
+      color: #FFFFFF;
+      h3 {
+        color: #d4d4d4;
+      }
+    }
+    .slides-navigation {
+      .main-arrow {
+        display: inline-block;
+        color: #FFFFFF;
+        background-color: $main-color;
+        &.deactivation {
+          color: #878787;
+          background-color: #3c4140;
+        }
+      }
+    }
+  }
+}
+
+
+.options {
+  .option {
+    &:nth-child(odd) {
+      background-color: #1c2a33;
+      border-top: 7px solid $main-color;
+      color: $main-color;
+    }
+    &:nth-child(even) {
+      background-color: $main-color;
+      border-top: 7px solid #FFFFFF;
+      color: #FFFFFF;
+    }
+  }
+}
+
+section {
+  h1 {
+    color: #4e4e4e;
+    &:before {
+      background-color: $main-color;
+    }
+    &:after {
+      background-color: $main-color;
+    }
+  }
+}
+
+.features {
+  .f-container {
+    .f-caption {
+      h3 {
+        color: #717171;
+        .fa {
+          color: $main-color;
+        }
+      }
+    }
+    .f-content {
+      p {
+        color: #777777;
+      }
+    }
+  }
+}
+
+.about-company {
+  background: #090f14 url("../img/bg_1.jpg") no-repeat center center;
+  h1 {
+    color: #ffffff;
+  }
+  #a-tabs {
+    .nav-tabs {
+      li {
+        color: #FFFFFF;
+        &.active {
+          border-top: 2px solid $main-color;
+          color: $main-color;
+        }
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+    .tabs-content {
+      .tab-pane {
+        color: #bebebe;
+        &#history {
+          ul {
+            i.fa {
+              color: $main-color;
+            }
+          }
+        }
+        &#skills {
+          .a-graph {
+            li {
+              > span {
+                border: 1px solid #959595;
+                .text {
+                  color: #FFFFFF;
+                }
+              }
+              &:nth-child(1) .bg {
+                background-color: #9c5da5;
+              }
+              &:nth-child(2) .bg {
+                background-color: #11b0de;
+              }
+              &:nth-child(3) .bg {
+                background-color: #d67f7f;
+              }
+              &:nth-child(4) .bg {
+                background-color: #20bc9d;
+              }
+              &:nth-child(5) .bg {
+                background-color: #bb8a36;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.amazing-work {
+  background-color: #f8fcfe;
+  .w-nav-tabs {
+    li {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      color: #717171;
+      &.active, &:hover {
+        color: $main-color;
+      }
+      &.active {
+        position: relative;
+        &:before {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+  .work-item {
+    .work-item-container {
+      background-color: #ffffff;
+      border-top: 3px solid $main-color;
+      .work-icon {
+        .icon-circle {
+          border: 2px solid $main-color;
+          &:hover {
+            background-color: $main-color;
+          }
+          &:hover .fa {
+            color: #FFFFFF;
+          }
+          .fa {
+            color: $main-color;
+          }
+        }
+      }
+      h3.work-caption {
+        color: $main-color;
+      }
+      .work-description {
+        color: #8a8a8a;
+      }
+    }
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px){
+
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px){
+  .about-company {
+    background: #090f14 none;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .amazing-work {
+    .w-nav-tabs {
+      li {
+        display: block;
+        & + li {
+          border-left: 1px solid #e0e0e0;
+        }
+      }
+    }
+  }
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px){
+
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px){
+  /**/
+}

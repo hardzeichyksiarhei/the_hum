@@ -1,0 +1,283 @@
+@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+body {
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+a.btn {
+  display: inline-block;
+  padding: 20px 30px;
+  margin-top: 70px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 4px;
+  text-decoration: none;
+  @include transition(.2s background-color linear);
+  & + & {
+    margin-left: 25px;
+  }
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+// Custom Style Here
+
+.main-header {
+  position: relative;
+  .main-nav {
+    background-color: rgba(#49473f, .6);
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .nav-wrapper {
+      font-weight: 700;
+      height: 120px;
+      .logo {
+        float: left;
+        a {
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #ffffff;
+          font-size: 30px;
+          letter-spacing: 2px;
+          font-weight: 500;
+        }
+        i.icon-logo {
+          vertical-align: middle;
+          font-size: 50px;
+          margin-right: 10px;
+          line-height: 120px;
+        }
+
+      }
+      ul {
+        text-align: right;
+        list-style-type: none;
+        margin: 0;
+        height: 100%;
+        float: right;
+        li {
+          height: 100%;
+          float: left;
+          position: relative;
+          & + li {
+            margin-left: 15px;
+          }
+          &:last-child {
+            margin-left: 25px;
+          }
+          &.active:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+          }
+          a {
+            display: block;
+            text-transform: uppercase;
+            font-size: 13px;
+            text-decoration: none;
+            line-height: 120px;
+          }
+        }
+      }
+    }
+  }
+
+  #slides {
+    .slide-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      .slide-caption {
+        width: 90%;
+        margin: 0 auto;
+        h1, h2 {
+          text-transform: uppercase;
+          line-height: 1;
+        }
+        h3 {
+          line-height: 1;
+          font-size: 34px;
+          margin-top: 35px;
+          margin-bottom: 70px;
+          font-weight: 400;
+        }
+        h2 {
+          font-size: 35px;
+          margin-bottom: 0;
+          font-weight: 900;
+        }
+        h1 {
+          font-size: 79px;
+          margin-top: 35px;
+          margin-bottom: 0;
+          font-weight: 900;
+        }
+        .btn {
+          &.btn-main-2 {
+            padding: 20px 27px;
+          }
+        }
+      }
+    }
+  }
+  .slides-navigation {
+    width: 190px;
+    position: absolute;
+    top: auto;
+    right: 10%;
+    bottom: 10%;
+    z-index: 4;
+    .next-image {
+      width: 100%;
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .main-arrow {
+      display: inline-block;
+      padding: 10px 27px;
+      position: static;
+      i {
+        @include transition(.2s all linear);
+      }
+      &.deactivation {
+        cursor: default;
+      }
+      &.next {
+        float: right;
+        &:not(.deactivation):hover i {
+          @include transform(translateX(3px));
+        }
+      }
+      &.prev {
+        float: left;
+        &:not(.deactivation):hover i {
+          @include transform(translateX(-3px));
+        }
+      }
+    }
+  }
+}
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .main-header {
+    .main-nav {
+      .nav-wrapper {
+        font-weight: 700;
+        height: 80px;
+        .logo {
+          float: left;
+        }
+        ul {
+          li {
+            a {
+              line-height: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+
+  /*Disable Animation on Mobile Devices*/
+  .animated {
+    /*CSS transitions*/
+    -o-transition-property: none !important;
+    -moz-transition-property: none !important;
+    -ms-transition-property: none !important;
+    -webkit-transition-property: none !important;
+    transition-property: none !important;
+    /*CSS transforms*/
+    -o-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    /*CSS animations*/
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .main-header {
+    #slides {
+      .slide-container {
+        .slide-container-table {
+          .slide-container-row {
+            .slide-container-cell {
+              .slide-caption {
+                h3 {
+                  font-size: 16px;
+                  margin-bottom: 40px;
+                }
+                h2 {
+                  font-size: 20px;
+                }
+                h1 {
+                  font-size: 35px;
+                }
+                a {
+                  margin-top: 0;
+                  padding: 15px 22px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  /**/
+}
