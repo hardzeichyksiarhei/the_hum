@@ -31,6 +31,12 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
+  section {
+    padding: $section-padding-small 0;
+    h1 {
+      font-size: 24px;
+    }
+  }
   .options {
     ul {
       .option {
@@ -43,13 +49,18 @@
   }
 
   .about-company {
-    .a-nav-tabs {
-      text-align: center;
-      li {
-        display: block;
-        & + li {
-          margin-left: 0;
+    #a-tabs {
+      .nav-tabs {
+        text-align: center;
+        li {
+          display: block;
+          & + li {
+            margin-left: 0;
+          }
         }
+      }
+      .tabs-content {
+        margin-top: 30px;
       }
     }
   }
@@ -61,6 +72,31 @@
         border-top: none;
         & + li {
           border-top: none;
+        }
+      }
+    }
+  }
+
+  .services {
+    #s-tabs {
+      .nav-tabs
+      {
+        display: block;
+        li {
+          display: block;
+          width: 100%;
+          &+li {
+            border-top: none;
+            border-left: 1px solid #e0e0e0;
+          }
+        }
+      }
+      .tabs-content {
+        img {
+          float: none;
+          margin-right: 0;
+          margin-bottom: 5px;
+          width: 100%;
         }
       }
     }

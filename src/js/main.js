@@ -3,6 +3,7 @@
  */
 
 //= ../../bower_components/jquery/dist/jquery.js
+//= ../../bower_components/parallax.js/parallax.js
 //= ../../bower_components/superslides/dist/jquery.superslides.js
 //= ../../bower_components/waypoints/waypoints.js
 //= ../../bower_components/mixitup/src/jquery.mixitup.js

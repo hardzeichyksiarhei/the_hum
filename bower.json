@@ -24,6 +24,7 @@
     "animate.css": "^3.5.2",
     "mixitup": "patrickkunka/mixitup#^2.1.11",
     "waypoints": "2.*",
-    "magnific-popup": "^1.1.0"
+    "magnific-popup": "^1.1.0",
+    "parallax.js": "^1.4.2"
   }
 }

@@ -60,7 +60,6 @@ a.btn {
         a {
           text-transform: uppercase;
           text-decoration: none;
-          color: #ffffff;
           font-size: 30px;
           letter-spacing: 2px;
           font-weight: 500;
@@ -71,7 +70,6 @@ a.btn {
           margin-right: 10px;
           line-height: 120px;
         }
-
       }
       ul {
         text-align: right;
@@ -202,10 +200,11 @@ a.btn {
   .main-header {
     .main-nav {
       .nav-wrapper {
-        font-weight: 700;
         height: 80px;
         .logo {
-          float: left;
+          i.icon-logo {
+            line-height: 80px;
+          }
         }
         ul {
           li {
@@ -248,28 +247,43 @@ a.btn {
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   .main-header {
+    .main-nav {
+      .nav-wrapper {
+        height: 60px;
+        .logo {
+          a {
+            font-size: 18px;
+          }
+          i.icon-logo {
+            line-height: 60px;
+            font-size: 25px;
+          }
+        }
+        ul {
+          li {
+            a {
+              line-height: 60px;
+            }
+          }
+        }
+      }
+    }
     #slides {
       .slide-container {
-        .slide-container-table {
-          .slide-container-row {
-            .slide-container-cell {
-              .slide-caption {
-                h3 {
-                  font-size: 16px;
-                  margin-bottom: 40px;
-                }
-                h2 {
-                  font-size: 20px;
-                }
-                h1 {
-                  font-size: 35px;
-                }
-                a {
-                  margin-top: 0;
-                  padding: 15px 22px;
-                }
-              }
-            }
+        .slide-caption {
+          h3 {
+            font-size: 16px;
+            margin-bottom: 40px;
+          }
+          h2 {
+            font-size: 20px;
+          }
+          h1 {
+            font-size: 35px;
+          }
+          a {
+            margin-top: 0;
+            padding: 15px 22px;
           }
         }
       }
