@@ -23,30 +23,10 @@ $(function () {
         current_next();
     }
 
-    function next() {
-        var
-            current_slide = $('#slides').superslides('current'),
-            active_slides = slides_container.find('ul li')[current_slide],
-            next_slide = $(active_slides).next()[0];
-
-        return next_slide !== undefined;
-
-    }
-
-    function prev() {
-        var
-            current_slide = $('#slides').superslides('current'),
-            active_slides = slides_container.find('ul li')[current_slide],
-            prev_slide = $(active_slides).prev()[0];
-
-        return prev_slide !== undefined;
-
-    }
-
-    function replace_src(value) {
+    function replace_src(value, speed) {
         var src = $(value).find('img')[0].src;
-        $('.next-image').find('img').fadeOut(500, function () {
-            $('.next-image').find('img').attr('src', src).fadeIn(500);
+        $('.next-image').find('img').fadeOut(speed, function () {
+            $('.next-image').find('img').attr('src', src).fadeIn(speed);
         });
     }
 
@@ -57,27 +37,31 @@ $(function () {
             next_slide = $(active_slides).next()[0],
             prev_slide = $(active_slides).prev()[0];
 
-        if (next()) {
+        if (next_slide !== undefined) {
             if (flag)
-                replace_src(next_slide);
+                replace_src(next_slide, 300);
             else {
                 flag = true;
-                var src = $(next_slide).find('img')[0].src;
-                $('.next-image').find('img').attr('src', src);
+                replace_src(next_slide, 0);
             }
         }
         else {
             replace_src(prev_slide);
             $('.slides-navigation .next').addClass('deactivation');
         }
-        if (!prev())
+        if (prev_slide === undefined)
             $('.slides-navigation .prev').addClass('deactivation');
 
     }
 
-    slides_container.on('animated.slides', function () {
+    $(document).on('animated.slides', function () {
         current_next();
     });
+
+    $(document).on('slides.image_adjusted', function () {
+       Waypoint.refreshAll()
+    });
+
 
     $('a.next').click(function (event) {
         if ($(this).hasClass('deactivation'))
@@ -98,12 +82,24 @@ $(function () {
 
     // Tabs about
     $('#a-tabs').tabs({
-        'active_number' : 2, // First element index 0
-        'speedFade': 300
+        'active_number' : 2,
+        clickEndTabs: function () {
+            $(window).trigger('resize').trigger('scroll');
+            Waypoint.refreshAll();
+        }
     });
 
     $('#s-tabs').tabs({
-        'active_number' : 0 // First element index 0
+        active_number : 0,
+        clickEndTabs: function () {
+            $(window).trigger('resize').trigger('scroll');
+            Waypoint.refreshAll();
+        }
+    });
+
+    $('.load-more').click(function () {
+        $(window).trigger('resize').trigger('scroll');
+        Waypoint.refreshAll();
     });
 
 
@@ -114,6 +110,9 @@ $(function () {
             effects: 'fade',
             easing: 'ease'
         }
+    }).on('mixEnd', function () {
+        $(window).trigger('resize').trigger('scroll');
+        Waypoint.refreshAll();
     });
 
     $('.w-nav-tabs li').click(function (event) {
@@ -125,11 +124,8 @@ $(function () {
         }
     });
 
-    $('.w-popap-init').magnificPopup({
-        type: 'inline'
-    });
 
-    $('.n-popap-init').magnificPopup({
+    $('.w-popap-init, .n-popap-init').magnificPopup({
         type: 'inline'
     });
 
@@ -138,10 +134,10 @@ $(function () {
     });
 
     // Animated
+    $("section h1").animated("fadeInUp", "fadeOutDown", '80%', -$(window).height());
     $('.option-animate').animated("fadeIn", "fadeOut", '100%', -$('.option-animate').height());
     $('.slides-navigation').animated("slideInRight", "slideOutRight", '100%', -$(".slides-navigation").height());
     $("span.bg").animated("slideInLeft", "slideOutLeft", '100%', -$("span.bg").height());
-    $("section h1").animated("fadeInUp", "fadeOutDown", '80%', -$(window).height());
     $(".caption-content h2").animated("fadeInDown", "none", '100%', -$('.caption-content').height());
     $(".caption-content h1, .caption-content h3").animated("fadeInUp", "none", '100%', -$('.caption-content').height());
 });

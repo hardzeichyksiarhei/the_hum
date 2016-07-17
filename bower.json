@@ -20,11 +20,11 @@
     "owl.carousel": "^2.1.6",
     "components-font-awesome": "^4.6.3",
     "bourbon": "^4.2.7",
-    "superslides": "^0.6.2",
     "animate.css": "^3.5.2",
     "mixitup": "patrickkunka/mixitup#^2.1.11",
-    "waypoints": "2.*",
     "magnific-popup": "^1.1.0",
-    "parallax.js": "^1.4.2"
+    "parallax.js": "^1.4.2",
+    "waypoints": "^4.0.0",
+    "superslides": "^0.6.2"
   }
 }
